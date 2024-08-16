@@ -10,7 +10,9 @@
             "request": "attach",
             "program": "enter program name, for example ${workspaceFolder}/a.exe",
             "MIMode": "gdb",
-            "miDebuggerPath": "/path/to/gdb",
+            "miDebuggerPath": "D:/MinGw/bin/gcc.exe",
+            
+
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
@@ -27,5 +29,4 @@
 
     ],
     "console": "integratedTerminal"
-
 }
