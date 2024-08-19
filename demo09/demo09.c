@@ -7,6 +7,8 @@
 
 #endif
 typedef unsigned int uint32;//取别名
+typedef unsigned short uint16;//取别名
+typedef unsigned char uint8;//取别名
 typedef struct 
 {
     char title[50];
