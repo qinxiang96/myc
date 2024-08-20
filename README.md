@@ -24,4 +24,5 @@ typedef struct{
 指针
 变量为表示数据而生，指针为了传递数据而生
 指针就是一个变量，不过放的是别的变量地址
-
+五、回调函数
+void addCallbackFunc(void *(statusChange)(int status)){}
