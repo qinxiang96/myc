@@ -33,3 +33,15 @@ void addCallbackFunc(void *(statusChange)(int status)){}
 提供事件驱动型设计方式，使得RTOS只是在处理实际任务时才会运行，能更合理的利用CPU。
 在实际项目中，如果程序等待一个超时事件，传统的无RTOS情况下，要么在原地一直等待而不能执行其他任务，要么使用复杂的状态机制
 使用RTOS则可以很方便的将当前任务阻塞在该事件下，然后自动去执行别的任务
+
+mac
+1、strcpy
+char *strcpy(char *restrict dst,const char *restrict src);
+把src的字符串拷贝到dst
+restrict表明src和dst不重叠
+返回dst
+
+复制一个字符串
+char *dst = (char*)malloc(strlen(src)+1);
+strcpy(dst,src);
+
