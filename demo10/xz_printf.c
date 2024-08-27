@@ -3,7 +3,7 @@
 void print_test(){
     printf("this is my file\n");
 }
-// int main(){
-//     print_test();
-//     return 0;
-// }
+int main(){
+    print_test();
+    return 0;
+}

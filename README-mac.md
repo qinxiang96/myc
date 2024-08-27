@@ -47,5 +47,44 @@ const int b = a;
 f(&b);//ok
 b = a + 1;//error
 
+五、指针的类型转换
+void*表示不知道指向什么东西的指针
+指针也可以转换类型
+int *p = &i;
+void*q = (void*)p;
+这并没有改变p所指的变量的类型，而是让后人用不同的眼光通过p看所指的变量：我不再当你是int，我认为你就是个void
+
+六、动态内存分配
+// malloc去申请空间，申请的空间大小是以字节为单位的，返回的结果是void*,需要类型转换为自己需要的类型，
+// 没有空间了，如果申请失败
+// free去释放空间，free只针对malloc的地址
+// 常见的问题：申请了没有free，长时间运行内存逐渐下降，新手忘了，老手找不到合适的free的时机
+//              free过了再free
+//              地址变过了，直接去freeC
+
+七、putchar
+int putchar(int c);
+向标准输出写一个字符
+返回写了几个字符，EOF(-1)表示写失败
+EOF是一个宏
+
+八、getchar
+int getchar(void)
+从标准输入读入一个字符
+返回类型是int是为了返回EOF(-1)
+
+九、字符串数组
+char **a
+a是一个指针，指向另一个指针，那个指针指向一个字符串
+
+十、Mac开发
+gcc hello.c
+会生成a.out
+./a.out
+执行a.out文件
+
+十一、strlen
+size_t strlen(const char *s)
+返回s的字符串长度（不包括结尾的0）
 
 
