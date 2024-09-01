@@ -87,4 +87,72 @@ gcc hello.c
 size_t strlen(const char *s)
 返回s的字符串长度（不包括结尾的0）
 
+十二、编译预处理
+#define PI 3.14
+在C语言的编译器开始编译之前，编译预处理程序会把程序中的名字换成值
+完全的文本替换
+
+定义没有值的宏
+#define _DEBUG
+这类宏用于条件编译的，后面有其他的编译预处理指令来检查这个宏是否已经被定义过了
+预定义的宏
+_LINE_ 表示行号
+
+十三、多文件执行命令
+方式一：
+gcc -Wall -Wextra -g3 /Users/qinxiang/Documents/code/myc/demo19/main.c /Users/qinxiang/Documents/code/myc/demo19/max.c -o /Users/qinxiang/Documents/code/myc/demo19/output/main
+
+cd /Users/qinxiang/Documents/code/myc/demo19/output
+./main
+
+输出
+6
+
+方式二：
+cd 目标文件夹
+gcc main.c max.c
+
+会生成a.out
+
+执行a.out
+./a.out
+
+输出
+6
+
+实验：
+gcc --save-temps main.c -c
+只做编译不做链接
+
+查看最后几行
+tail main.i
+
+
+
+
+
+十四、#include
+编译器预处理指令，和宏一样，在编译之前就处理了
+把那个文件的全部文本内容原封不动的插入到他所在的地方
+所以也不一定要在.c文件的最前面定义#include
+
+其中" "和<>的区别：
+""要求编译器首先在当前目录寻找这个文件，如果没有，到编译器指定的目录去找
+<>让编译器直接去指定目录找
+
+十五、标准头文件结构
+防止重复定义
+运行条件编译和宏，保证这个头文件在一个编译单元中只会被#include一次
+
+#ifndef _MAX_H_
+#define _MAX_H_
+//在这里定义方法，防止重复定义
+#endif
+
+十六、extern
+extern  int gAll;
+用extern修饰的变量，在其他文件中也可以被使用
+
+
+
 
